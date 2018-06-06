@@ -1,0 +1,16 @@
+{
+  "name": "flexigraphql2",
+  "version": "1.0.0",
+  "description": "new graphql server for flexilearn with auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nico Weingärtner",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.0.0-beta.4",
+    "axios": "^0.18.0",
+    "graphql": "^0.13.2"
+  }
+}
