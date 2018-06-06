@@ -5,8 +5,13 @@ const cors = require('cors');
 import typeDefs from './schema';
 import resolvers from './resolvers';
 
+const app = express();
+const path = '/graphl'
+app.options('*', cors())
+app.use(cors());
 
 const server = new ApolloServer({ typeDefs, resolvers });
+registerServer({ server, app, path});
 
 server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)

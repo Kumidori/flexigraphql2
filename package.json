@@ -14,7 +14,7 @@
     ]
   },
   "scripts": {
-    "start": "node ./server.js"
+    "start": "nodemon ./server.js --exec babel-node"
   },
   "author": "Nico Weingärtner",
   "license": "ISC",
