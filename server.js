@@ -6,13 +6,17 @@ import typeDefs from './schema';
 import resolvers from './resolvers';
 
 const app = express();
-const path = '/graphl'
 app.options('*', cors())
 app.use(cors());
 
 const server = new ApolloServer({ typeDefs, resolvers });
-registerServer({ server, app, path});
-
-server.listen().then(({ url }) => {
+registerServer({ server, app});
+const options = {
+    http:{
+        port:"80",
+        path:'/graphql'
+    }
+}
+server.listen(options).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)
 });
