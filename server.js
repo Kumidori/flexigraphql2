@@ -10,13 +10,8 @@ app.options('*', cors())
 app.use(cors());
 
 const server = new ApolloServer({ typeDefs, resolvers });
-registerServer({ server, app});
-const options = {
-    http:{
-        port:"80",
-        path:'/graphql'
-    }
-}
-server.listen(options).then(({ url }) => {
+registerServer({ server, app });
+
+server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)
 });
