@@ -1,4 +1,6 @@
 const axios = require('axios');
+let parseString = require('xml2js').parseString;
+
 const config = {
     auth: {
         username: "taubew.hfu",  //taubew userId = 77725698 / beckerth userId = 2193293313
