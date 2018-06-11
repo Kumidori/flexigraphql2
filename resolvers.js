@@ -138,7 +138,8 @@ const resolvers = {
                     });
         },
         News(parent,args,context,info){
-            const news = `context.request.headers.newslink,`;
+            console.log(context.request.headers.newslink);
+            const news = context.request.headers.newslink;
                 return axios.get(news, config)
                     .then(res => {
                         let final = [];
