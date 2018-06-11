@@ -138,7 +138,7 @@ const resolvers = {
                     });
         },
         News(parent,args,context,info){
-            const news = `https://felix.hs-furtwangen.de/rss/personal/beckerth.hfu/XLZrRj/olat.rss`;
+            const news = `context.request.headers.newslink,`;
                 return axios.get(news, config)
                     .then(res => {
                         let final = [];
