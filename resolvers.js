@@ -39,6 +39,21 @@ const resolvers = {
                     return res.data.veranstaltungen;
                 });
         },
+        Veranstaltungsnachrichten(parent,args,context,info){
+            const intraCourses = `https://webservdm.hs-furtwangen.de/subsites/Frapi/public/veranstaltungen/nachrichten/${args.id}`;
+            
+            let intraConfig = {
+                auth:{
+                username:context.request.headers.username,
+                password:context.request.headers.intrapassword
+                }
+            }
+            return axios.get(intraCourses, intraConfig)
+                .then(res => {
+                    console.log(res.data.veranstaltung)
+                    return res.data.veranstaltung;
+                });
+        },
         Veranstaltungsdetails(parent,args,context,info){
             const intraCourse = `https://webservdm.hs-furtwangen.de/subsites/Frapi/public/veranstaltungen/${args.id}`;
             let intraConfig = {

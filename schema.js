@@ -5,6 +5,7 @@ type Query {
     Katalog(key: String): Kurs
     Veranstaltungen: [Veranstaltungen]
     Veranstaltungsdetails(id: String): Veranstaltung
+    Veranstaltungsnachrichten(id: String): [Veranstaltungsnachrichten]
     Kurse(userId: String): [Kurs]
     Kurs(key: String): Kurs
     Folders(courseKey: String): Folder
@@ -40,6 +41,20 @@ type Veranstaltungen{
     name: String
     short: String
     id: String
+}
+type Veranstaltungsnachrichten{
+    subject: String
+    id: String
+    count: String
+    author: String
+    date: String
+    content: [Content]
+}
+type Content{
+    body: String
+    id: String
+    authorB: String
+    dateB: String
 }
 type Folder{
     detailsName: String
